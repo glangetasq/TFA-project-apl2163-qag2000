@@ -106,3 +106,7 @@ class SquirrelSighting(models.Model):
     approach = models.BooleanField()
     indifferent = models.BooleanField()
     run_from = models.BooleanField()
+
+
+    def __str__(self):
+        return f"{self.squirrel_id} at ({self.latittude}, {self.longitude})"
