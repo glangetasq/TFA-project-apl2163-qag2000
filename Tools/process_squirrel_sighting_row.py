@@ -58,3 +58,5 @@ def process_squirrel_sighting_row(row):
     processed_row['approach'] = row[SSI['approach']].capitalize()
     processed_row['indifferent'] = row[SSI['indifferent']].capitalize()
     processed_row['run_from'] = row[SSI['run_from']].capitalize()
+
+    return processed_row
