@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .models import SquirrelSighting
+from .forms import SquirrelSightingForm
 
 # View that show the map of 100 random sightings.
 def map(request):
