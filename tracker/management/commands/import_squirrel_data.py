@@ -22,6 +22,7 @@ class Command(BaseCommand):
 
         path = args[0]
         print(f"Loading data from {path} ...")
+        count = 0
 
         with open(path) as f:
 
@@ -35,8 +36,9 @@ class Command(BaseCommand):
 
                 try:
                     SquirrelSighting.objects.get_or_create(**processed_row)
+                    count += 1
                 except IntegrityError:
                     print(f"{processed_row['squirrel_id']} is already in the data base.")
 
 
-        print(f"Finished loading data from {path}")
+        print(f"Loaded {count}/{len(reader)-1} squirrel sightings from {path}.")
