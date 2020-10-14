@@ -1,0 +1,15 @@
+{% if sightings %}
+  <ul>
+    <a> todo: Add </a>
+    {% for sighting in sightings %}
+      <li>
+          {{ sighting.__str__() }}
+          <a> todo: Edit </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>
+    There are no squirrel sightings in the data base.
+  </p>
+{% endif %}
