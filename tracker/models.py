@@ -64,6 +64,7 @@ class SquirrelSighting(models.Model):
         max_length = 10,
         choices = FUR_CHOICES,
         default = FUR_OTHER,
+        blank = True,
     )
 
     # Squirrel Sighting Location
@@ -81,31 +82,35 @@ class SquirrelSighting(models.Model):
         max_length = 20,
         choices = LO_CHOICES,
         default = LO_OTHER,
+        blank = True,
     )
 
-    specific_location=models.CharField(max_length=200)
+    specific_location = models.CharField(
+        max_length = 200,
+        blank = True,
+    )
 
     # Squirrel's behavior upon sighting
-    run = models.BooleanField()
-    chase = models.BooleanField()
-    climb = models.BooleanField()
-    eat = models.BooleanField()
-    forage = models.BooleanField()
-    other_activities = models.CharField(max_length=200)
+    run = models.BooleanField(blank=True)
+    chase = models.BooleanField(blank=True)
+    climb = models.BooleanField(blank=True)
+    eat = models.BooleanField(blank=True)
+    forage = models.BooleanField(blank=True)
+    other_activities = models.CharField(max_length=200, blank=True)
 
     # Squirrel's sound upon sighting
-    kuks = models.BooleanField()
-    quaas = models.BooleanField()
-    moans = models.BooleanField()
+    kuks = models.BooleanField(blank=True)
+    quaas = models.BooleanField(blank=True)
+    moans = models.BooleanField(blank=True)
 
     # Squirrel's tail behavior
-    tail_flag = models.BooleanField()
-    tail_twitch = models.BooleanField()
+    tail_flag = models.BooleanField(blank=True)
+    tail_twitch = models.BooleanField(blank=True)
 
     # Squirrel's behavior to human upon sighting
-    approach = models.BooleanField()
-    indifferent = models.BooleanField()
-    run_from = models.BooleanField()
+    approach = models.BooleanField(blank=True)
+    indifferent = models.BooleanField(blank=True)
+    run_from = models.BooleanField(blank=True)
 
 
     def __str__(self):
