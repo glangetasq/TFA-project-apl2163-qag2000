@@ -4,6 +4,7 @@ import os
 import csv
 
 from django.core.management.base import BaseCommand, CommandError
+from django.db.utils import IntegrityError
 from tracker.models import SquirrelSighting
 
 import Tools
@@ -31,6 +32,11 @@ class Command(BaseCommand):
             for row in reader:
 
                 processed_row = Tools.process_squirrel_sighting_row(row)
-                SquirrelSighting.objects.get_or_create(**processed_row)
+
+                try:
+                    SquirrelSighting.objects.get_or_create(**processed_row)
+                except IntegrityError:
+                    print(f"{processed_row['squirrel_id']} is already in the data base.")
+
 
         print(f"Finished loading data from {path}")
