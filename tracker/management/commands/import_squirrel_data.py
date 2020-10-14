@@ -14,7 +14,7 @@ class Command(BaseCommand):
         parser.add_argument('args', nargs = '+', type = str)
 
 
-    def handle(self, *args, **kwargs):
+    def handle(self, *args, **options):
 
         if not args:
             raise CommandError ("Invalid Invocation.")
