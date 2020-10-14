@@ -4,7 +4,7 @@ import os
 import csv
 
 from django.core.management.base import BaseCommand, CommandError
-from strack.models import SquirrelSighting
+from tracker.models import SquirrelSighting
 
 import Tools
 
