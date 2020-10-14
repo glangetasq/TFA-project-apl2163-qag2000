@@ -3,8 +3,8 @@
     <a> todo: Add </a>
     {% for sighting in sightings %}
       <li>
-          {{ sighting.squirrel_id }}
-          <a> todo: Edit </a>
+          {{ sighting.squirrel_id }} at ({{ sighting.latittude}} | {{ sighting.longitude }})
+          <a href="{% url 'tracker:update' sighting.squirrel_id %}">Edit</a>
       </li>
     {% endfor %}
   </ul>
