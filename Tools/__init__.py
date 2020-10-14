@@ -1,0 +1,1 @@
+from .process_squirrel_sighting_row import process_squirrel_sighting_row
