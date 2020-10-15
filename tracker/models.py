@@ -11,7 +11,7 @@ class SquirrelSighting(models.Model):
     )
 
     # coordinates
-    latittude = models.FloatField()
+    latitude = models.FloatField()
     longitude = models.FloatField()
 
     # date & time
