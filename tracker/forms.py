@@ -6,4 +6,11 @@ from .models import SquirrelSighting
 class SquirrelSightingForm(ModelForm):
     class Meta:
         model = SquirrelSighting
-        fields = '__all__'
+        fields = [
+            'squirrel_id',
+            'latitude',
+            'longitude',
+            'shift',
+            'date',
+            'age',
+        ]

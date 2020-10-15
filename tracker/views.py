@@ -31,7 +31,7 @@ def update(request, primary_key):
         form = SquirrelSightingForm(request.POST, instance=squirrel_sighting)
         if form.is_valid():
             form.save()
-            return redirect(f"/tracker/sightings/{primary_key}")
+            return redirect(f"/sightings/{primary_key}")
 
     else:
 
