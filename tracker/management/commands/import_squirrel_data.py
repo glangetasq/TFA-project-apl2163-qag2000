@@ -22,7 +22,7 @@ class Command(BaseCommand):
 
         path = args[0]
         print(f"Loading data from {path} ...")
-        count = 0
+        count_add = count = 0
 
         with open(path) as f:
 
@@ -31,14 +31,14 @@ class Command(BaseCommand):
             next(reader) # skip header
 
             for row in reader:
-
+                count += 1
                 processed_row = Tools.process_squirrel_sighting_row(row)
 
                 try:
                     SquirrelSighting.objects.get_or_create(**processed_row)
-                    count += 1
+                    count_add += 1
                 except IntegrityError:
                     print(f"{processed_row['squirrel_id']} is already in the data base.")
 
 
-        print(f"Loaded {count}/{len(reader)-1} squirrel sightings from {path}.")
+        print(f"Loaded {count_add}/{count} squirrel sightings from {path}.")
