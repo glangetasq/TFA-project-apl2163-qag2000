@@ -38,7 +38,7 @@ class Command(BaseCommand):
                     SquirrelSighting.objects.get_or_create(**processed_row)
                     count_add += 1
                 except IntegrityError:
-                    print(f"{processed_row['squirrel_id']} is already in the data base.")
+                    print(f"{processed_row['squirrel_id']} is already in the database.")
 
 
         print(f"Loaded {count_add}/{count} squirrel sightings from {path}.")
