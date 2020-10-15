@@ -3,7 +3,7 @@
 SQUIRREL_SIGHTING_DATE_FORMAT = "%m%d%Y"
 
 SQUIRREL_SIGHTING_INDICES = {
-    'latittude' : 1,
+    'latitude' : 1,
     'longitude' : 0,
     'squirrel_id' : 2,
     'shift' : 4,

@@ -20,7 +20,7 @@ def process_squirrel_sighting_row(row):
     processed_row['squirrel_id'] = row[SSI['squirrel_id']]
 
     # coordinates
-    processed_row['latittude'] = row[SSI['latittude']]
+    processed_row['latitude'] = row[SSI['latitude']]
     processed_row['longitude'] = row[SSI['longitude']]
 
     # date & time
