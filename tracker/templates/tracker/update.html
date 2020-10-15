@@ -1,10 +1,10 @@
-<!--tracker/templates/tracker/update.html>
+<!--tracker/templates/tracker/update.html-->
 <!doctype html>
 <html>
   <body>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <br>
         <input type="submit" name="Submit">
     </form>
