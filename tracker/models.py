@@ -26,9 +26,7 @@ class SquirrelSighting(models.Model):
         choices = SHIFT_CHOICES,
     )
 
-    date=models.DateField(
-        auto_now_add = True
-    )
+    date=models.DateField()
 
     # Squirrel Age
     ADULT = 'Adult'
