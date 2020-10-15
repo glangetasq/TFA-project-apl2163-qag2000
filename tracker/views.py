@@ -3,9 +3,21 @@ from django.shortcuts import render, redirect
 from .models import SquirrelSighting
 from .forms import SquirrelSightingForm
 
+import random
+
 # View that show the map of 100 random sightings.
 def map(request):
-    pass
+
+    all_sightings = SquirrelSighting.objects.all()
+    random.shuffle(all_sightings)
+    sample_sightings = all_sightings[:100]
+
+    context = {
+        'sightings' : sample_sightings
+    }
+
+    return render(request, 'tracker/map.html', context)
+    
 
 # View that lists all sightings.
 def index(request):
