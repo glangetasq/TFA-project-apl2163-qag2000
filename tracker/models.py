@@ -1,8 +1,10 @@
 from django.db import models
 
-# Create your models here.
 
 class SquirrelSighting(models.Model):
+    """
+    Model of a squirrel sighting (in central park)
+    """
 
     # ID
     squirrel_id = models.CharField(

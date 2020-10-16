@@ -10,12 +10,16 @@ from tracker.models import SquirrelSighting
 import Tools
 
 class Command(BaseCommand):
+    help = "Import squirrel sightings data into the server database."
 
     def add_arguments(self, parser):
         parser.add_argument('args', nargs = '+', type = str)
 
 
     def handle(self, *args, **options):
+        """
+        Import squirrel sigthings from path to the server database.
+        """
 
         if not args:
             raise CommandError ("Invalid Invocation.")
@@ -33,7 +37,7 @@ class Command(BaseCommand):
             for row in reader:
                 count += 1
                 processed_row = Tools.process_squirrel_sighting_row(row)
-                
+
                 try:
                     SquirrelSighting.objects.get_or_create(**processed_row)
                     count_add += 1

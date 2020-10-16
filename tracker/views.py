@@ -8,13 +8,18 @@ from .forms import SquirrelSightingForm
 import Tools
 import Stats
 
-# Main view at root path to access sightings or map
+
 def main(request):
+    """
+    Main view at root path to access sightings or map
+    """
     return render(request, 'tracker/main.html', {})
 
 
-# View that show the map of 100 random sightings.
 def map(request):
+    """
+    View that show the map of 100 random sightings.
+    """
 
     all_sightings = SquirrelSighting.objects.all()
     sample_sightings = Tools.random_sample_from_querry_set(all_sightings, 100)
@@ -26,8 +31,10 @@ def map(request):
     return render(request, 'tracker/map.html', context)
 
 
-# View that lists all sightings.
 def index(request):
+    """
+    View that lists all sightings.
+    """
 
     sightings = SquirrelSighting.objects.order_by('date', 'shift')
 
@@ -38,11 +45,10 @@ def index(request):
     return render(request, 'tracker/index.html', context)
 
 
-
-
-# View that update one sighting.
 def update(request, primary_key):
-
+    """
+    View that update one sighting.
+    """
     squirrel_sighting = SquirrelSighting.objects.get(squirrel_id=primary_key)
 
     if request.method == "POST":
@@ -61,8 +67,10 @@ def update(request, primary_key):
     return render(request, 'tracker/update.html', context)
 
 
-# View to create a new sighting
 class createSquirrelSighting(CreateView):
+    """
+    View to create a new sighting
+    """
 
     model = SquirrelSighting
     fields = '__all__'
@@ -70,8 +78,10 @@ class createSquirrelSighting(CreateView):
     success_url = reverse_lazy('tracker:index')
 
 
-# View to display statistics on the squirrel sightings.
 def stats(request):
+    """
+    View to display statistics on the squirrel sightings.
+    """
 
     squirrel_sightings = SquirrelSighting.objects.all()
 

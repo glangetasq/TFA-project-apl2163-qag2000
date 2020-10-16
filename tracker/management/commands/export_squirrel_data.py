@@ -10,12 +10,16 @@ from tracker.models import SquirrelSighting
 import Tools
 
 class Command(BaseCommand):
+    help = "Export server squirrel sighting database into csv format."
 
     def add_arguments(self, parser):
         parser.add_argument('args', nargs = '+', type = str)
 
 
     def handle(self, *args, **options):
+        """
+        Export server squirrel sighting database into path.
+        """
 
         if not args:
             raise CommandError ("Invalid Invocation.")
