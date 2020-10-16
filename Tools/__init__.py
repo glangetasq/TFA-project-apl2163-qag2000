@@ -1,2 +1,3 @@
 from .process_squirrel_sighting_row import process_squirrel_sighting_row
 from .random_sample_from_querry_set import random_sample_from_querry_set
+from .squirrel_sighting_to_row import squirrel_sighting_to_row
