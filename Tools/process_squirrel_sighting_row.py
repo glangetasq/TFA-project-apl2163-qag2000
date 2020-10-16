@@ -32,6 +32,7 @@ def process_squirrel_sighting_row(row):
     processed_row['age'] = row[SSI['age']]
 
     # Squirrel Fur Color
+    processed_row['fur'] = row[SSI['fur']]
 
     # Squirrel Sighting Location
     processed_row['location'] = row[SSI['location']]

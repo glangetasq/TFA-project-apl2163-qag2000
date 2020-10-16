@@ -33,7 +33,7 @@ class Command(BaseCommand):
             for row in reader:
                 count += 1
                 processed_row = Tools.process_squirrel_sighting_row(row)
-
+                
                 try:
                     SquirrelSighting.objects.get_or_create(**processed_row)
                     count_add += 1

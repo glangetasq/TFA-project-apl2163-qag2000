@@ -58,7 +58,7 @@ class SquirrelSighting(models.Model):
         (FUR_OTHER,''),
     )
 
-    Fur=models.CharField(
+    fur = models.CharField(
         max_length = 10,
         choices = FUR_CHOICES,
         default = FUR_OTHER,
@@ -70,7 +70,7 @@ class SquirrelSighting(models.Model):
     GROUND_PLANE = 'Ground Plane'
     LO_OTHER = ''
 
-    LO_CHOICES =(
+    LO_CHOICES = (
         (ABOVE_GROUND,'Above Ground'),
         (GROUND_PLANE,'Ground Plane'),
         (LO_OTHER,''),
@@ -112,4 +112,4 @@ class SquirrelSighting(models.Model):
 
 
     def __str__(self):
-        return f"{self.squirrel_id} at ({self.latittude}, {self.longitude})"
+        return f"{self.squirrel_id} at ({self.latitude}, {self.longitude})"
