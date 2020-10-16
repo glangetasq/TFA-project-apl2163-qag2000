@@ -6,7 +6,7 @@ The Squirrel Tracker is a web application that keeps track of all the known squi
 Some general statistics and a map showing part of the sighting records can be obtained. Sighting records can be added and/or edited.  
 
 ## What does it do?
-The main features of Squirrel Tracker are the following:
+The main features of The Squirrel Tracker are the following:
 1) A "map" view displaying the location of 100 squirrel sightings on an OpenStreets map.<br /> 
   Located at /map.
 2) A "sighting" view listing all squirrel sightings incudling links to view each sighting.<br /> 
