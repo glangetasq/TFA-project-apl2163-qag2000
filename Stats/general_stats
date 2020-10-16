@@ -1,0 +1,26 @@
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404,redirect
+from django.urls import  reverse_lazy
+from django.views.generic.edit import UpdateView,DeleteView,CreateView
+from django.db.models import Min,Max,Avg,Count
+
+from .models import SquirrelSighting
+
+def stats(request):
+    squirrel_list = SquirrelSighting.objects.all()
+    TotalNumber = len(squirrel_list)
+    Run% = list(squirrel_list.values_list('Running').annotate(Count('Running'))/len(squirrel_list))
+    Chase% = list(squirrel_list.values_list('Chasing').annotate(Count('Chasing'))/len(squirrel_list))
+    Climb% = list(squirrel_list.values_list('Climbing').annotate(Count('Climbing'))/len(squirrel_list))
+    Eat% = list(squirrel_list.values_list('Eating').annotate(Count('Eating'))/len(squirrel_list))
+    Forage% = list(squirrel_list.values_list('Foraging').annotate(Count('Foraging'))/len(squirrel_list))
+    context = {
+        'stats':{'TotalNumber':TotalNumber,
+                'Run%':Run%,
+                'Chase%':Chase%,
+                'Climb%':Climb%,
+                'Eat%':Eat%,
+                'Forage%':Forage%,},
+    }
+    return render(request, 'st/stats.html', context)
