@@ -6,12 +6,13 @@ from .models import SquirrelSighting
 from .forms import SquirrelSightingForm
 
 import Tools
+import Stats
 
 # Main view at root path to access sightings or map
 def main(request):
-    return render(request, 'tracker/main.html')
+    return render(request, 'tracker/main.html', {})
 
-    
+
 # View that show the map of 100 random sightings.
 def map(request):
 
@@ -70,3 +71,10 @@ class createSquirrelSighting(CreateView):
 
 
 # View to display statistics on the squirrel sightings.
+def stats(request):
+
+    squirrel_sightings = SquirrelSighting.objects.all()
+
+    context = Stats.general_stats(squirrel_sightings)
+
+    return render(request, 'tracker/stats.html', context)
