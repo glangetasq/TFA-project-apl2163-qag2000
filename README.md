@@ -1,12 +1,12 @@
 # The Squirrel Tracker
 ![scratch](https://www.nicepng.com/png/detail/12-129187_ice-age-squirrel-png-image-age-de-glace.png)
 
-## What is it?
+## Description
 The Squirrel Tracker is a web application that keeps track of all the known squirrels in Central Park, NYC. Data are extracted from the initial dataset [2018_Central_Park_Squirrel_Census](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw).<br /> 
 Some general statistics and a map showing part of the sighting records can be obtained. Sighting records can be added and/or edited.  
 
 ## What does it do?
-The main features of Squirrel Tracker are the following:
+The main features of The Squirrel Tracker are the following:
 1) A "map" view displaying the location of 100 squirrel sightings on an OpenStreets map.<br /> 
   Located at /map.
 2) A "sighting" view listing all squirrel sightings incudling links to view each sighting.<br /> 
