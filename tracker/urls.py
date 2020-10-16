@@ -7,5 +7,6 @@ app_name = 'tracker'
 urlpatterns = [
     path('map/', views.map, name='map'),
     path('sightings/', views.index, name='index'),
-    re_path(r'sightings/(?P<primary_key>[a-zA-Z0-9-]+)', views.update, name='update')
+    path('sightings/add', views.createSquirrelSighting.as_view(), name='create'),
+    re_path(r'sightings/(?P<primary_key>[a-zA-Z0-9-]+)', views.update, name='update'),
 ]

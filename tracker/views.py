@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.urls import  reverse_lazy
+from django.views.generic.edit import CreateView
 
 from .models import SquirrelSighting
 from .forms import SquirrelSightingForm
@@ -54,7 +56,12 @@ def update(request, primary_key):
 
 
 # View to create a new sighting
+class createSquirrelSighting(CreateView):
 
+    model = SquirrelSighting
+    fields = '__all__'
+    template_name = 'tracker/create.html'
+    success_url = reverse_lazy('tracker:index')
 
 
 # View to display statistics on the squirrel sightings.
