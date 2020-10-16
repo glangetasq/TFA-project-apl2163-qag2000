@@ -9,11 +9,11 @@ from .models import SquirrelSighting
 def stats(request):
     squirrel_list = SquirrelSighting.objects.all()
     TotalNumber = len(squirrel_list)
-    Run% = list(squirrel_list.values_list('Running').annotate(Count('Running'))/len(squirrel_list))
-    Chase% = list(squirrel_list.values_list('Chasing').annotate(Count('Chasing'))/len(squirrel_list))
-    Climb% = list(squirrel_list.values_list('Climbing').annotate(Count('Climbing'))/len(squirrel_list))
-    Eat% = list(squirrel_list.values_list('Eating').annotate(Count('Eating'))/len(squirrel_list))
-    Forage% = list(squirrel_list.values_list('Foraging').annotate(Count('Foraging'))/len(squirrel_list))
+    Run% = list(squirrel_list.values_list('Run').annotate(Count('Run'))/len(squirrel_list))
+    Chase% = list(squirrel_list.values_list('Chase').annotate(Count('Chase'))/len(squirrel_list))
+    Climb% = list(squirrel_list.values_list('Climb').annotate(Count('Climb'))/len(squirrel_list))
+    Eat% = list(squirrel_list.values_list('Eat').annotate(Count('Eat'))/len(squirrel_list))
+    Forage% = list(squirrel_list.values_list('Forage').annotate(Count('Forage'))/len(squirrel_list))
     context = {
         'stats':{'TotalNumber':TotalNumber,
                 'Run%':Run%,
