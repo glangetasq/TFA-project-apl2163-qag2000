@@ -5,6 +5,7 @@ from . import views
 app_name = 'tracker'
 
 urlpatterns = [
+    path('', views.main, name='main'),
     path('map/', views.map, name='map'),
     path('sightings/', views.index, name='index'),
     path('sightings/add', views.createSquirrelSighting.as_view(), name='create'),

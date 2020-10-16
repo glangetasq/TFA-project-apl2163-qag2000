@@ -7,6 +7,11 @@ from .forms import SquirrelSightingForm
 
 import Tools
 
+# Main view at root path to access sightings or map
+def main(request):
+    return render(request, 'tracker/main.html')
+
+    
 # View that show the map of 100 random sightings.
 def map(request):
 
