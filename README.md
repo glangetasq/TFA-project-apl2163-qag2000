@@ -7,7 +7,7 @@ Some general statistics and a map showing part of the sighting records can be ob
 
 ## What does it do?
 The main features of Squirrel Tracker are the following:
-1) A "map" view displaying the location of 100 squirrel sightings on an OpenStreets map. 
+1) A "map" view displaying the location of 100 squirrel sightings on an OpenStreets map.<br /> 
   Located at /map.
 2) A "sighting" view listing all squirrel sightings incudling links to view each sighting. 
   Located at /sightings.
@@ -19,7 +19,7 @@ The main features of Squirrel Tracker are the following:
   Located at /sightings/stats.
 
 ## Where to access it?
-The source code is hosted on Github at: https://github.com/glangetasq/TFA-project-apl2163-qag2000.
+The source code is hosted on Github and available at: https://github.com/glangetasq/TFA-project-apl2163-qag2000.
 
 ## Group name & section
 "Quentin & Amaury" group, section 3
