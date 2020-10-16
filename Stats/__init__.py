@@ -1,0 +1,1 @@
+from .truc import truc
