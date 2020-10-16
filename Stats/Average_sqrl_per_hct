@@ -1,0 +1,2 @@
+SELECT AVG(Hectare Squirrel Number)
+FROM squirrel_data
