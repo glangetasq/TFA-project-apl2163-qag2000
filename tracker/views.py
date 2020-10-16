@@ -21,7 +21,7 @@ def map(request):
 # View that lists all sightings.
 def index(request):
 
-    sightings = SquirrelSighting.objects.all()
+    sightings = SquirrelSighting.objects.order_by('date', 'shift')
 
     context = {
         'sightings' : sightings,

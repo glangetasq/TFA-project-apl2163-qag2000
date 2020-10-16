@@ -1,15 +1,51 @@
-{% if sightings %}
-  <ul>
-    <a> todo: Add </a>
-    {% for sighting in sightings %}
-      <li>
-          {{ sighting.squirrel_id }} at ({{ sighting.latitude}} | {{ sighting.longitude }})
-          <a href="{% url 'tracker:update' sighting.squirrel_id %}">Edit</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>
-    There are no squirrel sightings in the data base.
-  </p>
-{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width : 50%;
+  border-collapse : collapse;
+}
+th {
+  height : 30px;
+  text-align : center;
+  border-bottom: 1px solid #ddd;;
+}
+td {
+  text-align : center;
+  border-bottom: 1px solid #ddd;
+}
+tr:hover {background-color:#f5f5f5;}
+</style>
+</head>
+<body>
+
+  <h2>Squirrel Sightings in Central Park</h2>
+
+  {% if sightings %}
+    <table>
+      <tr>
+          <th></th>
+          <th>Sighting ID</th>
+          <th>Coordinates</th>
+          <th>Date</th>
+          <th>Shift</th>
+      </tr>
+      {% for sighting in sightings %}
+        <tr>
+          <td> <a href="{% url 'tracker:update' sighting.squirrel_id %}">Edit</a> </td>
+          <td>{{sighting.squirrel_id}}</td>
+          <td>({{sighting.latitude}}, {{sighting.longitude}})</td>
+          <td>{{sighting.date}}</td>
+          <td>{{sighting.shift}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>
+      There are no squirrel sightings in the database.
+    </p>
+    {% endif %}
+
+</body>
+</html>
