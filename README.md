@@ -22,7 +22,7 @@ The main features of Squirrel Tracker are the following:
 The source code is hosted on Github and available at: https://github.com/glangetasq/TFA-project-apl2163-qag2000.
 
 ## Group name & section
-"Quentin & Amaury" group, section 3
+"Quentin & Amaury" group, section 3.
 
 ## UNI for each member
 UNIs: [qag2000, apl2163]
