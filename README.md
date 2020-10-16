@@ -13,7 +13,7 @@ The main features of Squirrel Tracker are the following:
   Located at /sightings.
 3) An "update" view to update a particular sighting. 
   Located at /sightings/<unique-squirrel-id>.
-4) An "add" view to create a new sighting. The fields "Latitude", "Longitude", "Unique Squirrel ID", "Shift", "Date" and "Age" are required to add a new      sighting record. Remaning fields are otpional.
+4) An "add" view to create a new sighting. The fields "Latitude", "Longitude", "Unique Squirrel ID", "Shift", "Date" and "Age" are required to add a new      sighting record. Remaning fields are optional.
    Located at /sightings/add.
 5) A "stats" view displaying general statistics on the sightings. 
   Located at /sightings/stats.
