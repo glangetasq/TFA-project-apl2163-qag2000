@@ -1,4 +1,0 @@
-import pandas as pd
-df = pd.read_csv (squirrel_sightings.csv) 
-
-%_sqrl_chasing = (df['Chasing'].values.sum()/df['Chasing'].count())*100
