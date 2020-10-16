@@ -1,5 +1,19 @@
 <!--tracker/templates/tracker/update.html-->
 <!doctype html>
+<style>
+.button {
+  font: 11px Arial;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 4px;
+}
+</style>
 <html>
   <body>
     <form method="post">
@@ -7,6 +21,7 @@
         {{ form }}
         <br>
         <input type="submit" name="Submit">
+        <a class="button" href="/sightings/">Go back</a>
     </form>
   </body>
 </html>
